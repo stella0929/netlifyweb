@@ -29,11 +29,16 @@ app.use(expressSession({
 }));
 
 router.get('/', (req, res) => {
-
+console.log('aa');
 	res.redirect('./public/main.html');
 	
 });
 
+router.post('/', (req, res) => {
+console.log('bb');
+	res.redirect('./public/main.html');
+	
+});
 
 
 //route_loader.init(app,express.Router());
