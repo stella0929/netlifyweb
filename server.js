@@ -51,17 +51,17 @@ router.get('/', function(req, res) {
 //route_loader.init(app,express.Router());
 //app.use('/',router);
 
-var errorHandler = expressErrorHandler({
-	static: {
-		'404': './public/404.html'
-	}
-});
-
 
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 app.use('/', function(req, res)res.sendFile(path.join(__dirname, '/index.html')));
+//var errorHandler = expressErrorHandler({
+//	static: {
+	//	'404': './public/404.html'
+//	}
+//});
 
-app.use(expressErrorHandler.httpError(404));
-app.use(errorHandler);
+
+//app.use(expressErrorHandler.httpError(404));
+//app.use(errorHandler);
 module.exports = app;
 module.exports.handler = serverless(app);
