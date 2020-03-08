@@ -12,7 +12,7 @@ var expressSession = require('express-session');
 var expressErrorHandler = require('express-error-handler');
 
 var database_loader = require('../database/database_loader');
-var config = require('./config');
+var config = require('../config');
 var route_loader = require('../routes/route_loader');
 
 console.log('config.server_port ->'+config.server_port);
