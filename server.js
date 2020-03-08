@@ -29,12 +29,12 @@ app.use(expressSession({
 
 
 
-router.get('/', function(req, res) {
+router.get('https://5e652a30c9c7bb0009cbe9c0--frosty-swirles-82f043.netlify.com/', function(req, res) {
   res.writeHead(200, { 'Content-Type': 'text/html' });
   res.write('<h1>Hello from Express.js!</h1>');
   res.end();
 });
-router.post('/', function(req, res) {
+router.post('https://5e652a30c9c7bb0009cbe9c0--frosty-swirles-82f043.netlify.com/', function(req, res) {
   res.writeHead(200, { 'Content-Type': 'text/html' });
   res.write('<h1>Hello from Express.js!</h1>');
   res.end();
