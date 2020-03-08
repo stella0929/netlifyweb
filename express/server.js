@@ -11,9 +11,9 @@ var expressSession = require('express-session');
 //에러 헨들러 모듈 사용
 var expressErrorHandler = require('express-error-handler');
 
-var database_loader = require('./database/database_loader');
+var database_loader = require('../database/database_loader');
 var config = require('./config');
-var route_loader = require('./routes/route_loader');
+var route_loader = require('../routes/route_loader');
 
 console.log('config.server_port ->'+config.server_port);
 app.set('port', config.server_port || 3000);
