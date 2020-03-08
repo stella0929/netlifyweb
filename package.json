@@ -2,12 +2,10 @@
   "name": "web",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "functions/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start:lambda": "netlify-lambda serve src/lambda",
-    "build:lambda": "netlify-lambda build src/lambda",
-	  " build " : " netlify-lambda build express " 
+    "build": " netlify-lambda build express",
+    "start": " nodemon server-local.js "
   },
   "author": "",
   "license": "ISC",
