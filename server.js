@@ -28,7 +28,7 @@ app.use(expressSession({
 	saveuninstalized: true
 }));
 
-app.get('/',function(req,res){
+app.get('https://tolietsafety.netlify.com',function(req,res){
 	redirect('../public/main.html');
 });
 
