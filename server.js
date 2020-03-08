@@ -42,7 +42,7 @@ console.log('bb');
 
 
 //route_loader.init(app,express.Router());
-app.use('/',router);
+//app.use('/',router);
 
 var errorHandler = expressErrorHandler({
 	static: {
