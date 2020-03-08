@@ -27,19 +27,8 @@ app.use(expressSession({
 	saveuninstalized: true
 }));
 
-router.get('/', function(req, res) {
-console.log('aa');
-	res.send("hello");
-	res.redirect('./public/main.html');
-	
-});
 
-router.get('/sdfg', function(req, res) {
-console.log('aa');
-	res.send("hello");
-	res.redirect('./public/main.html');
-	
-});
+
 router.get('/', function(req, res) {
   res.writeHead(200, { 'Content-Type': 'text/html' });
   res.write('<h1>Hello from Express.js!</h1>');
@@ -47,21 +36,9 @@ router.get('/', function(req, res) {
 });
 
 
-
-//route_loader.init(app,express.Router());
-//app.use('/',router);
-
-
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 app.use('/', function(req, res){res.sendFile(path.join(__dirname, '/index.html'))});
-//var errorHandler = expressErrorHandler({
-//	static: {
-	//	'404': './public/404.html'
-//	}
-//});
 
 
-//app.use(expressErrorHandler.httpError(404));
-//app.use(errorHandler);
 module.exports = app;
 module.exports.handler = serverless(app);
