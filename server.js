@@ -28,9 +28,27 @@ app.use(expressSession({
 	saveuninstalized: true
 }));
 
-app.get('https://tolietsafety.netlify.com',function(req,res){
-	redirect('../public/main.html');
+
+app.get('/',function(req,res){
+	res.writeHead(200,{'Content-Type':'text/html'}); // header 설정
+      fs.readFile(__dirname+ '/public/main.html', function(err, data){ // 파일 읽는 메소드
+        if (err) {
+          return console.error(err); // 에러 발생시 에러 기록하고 종료
+        }
+        res.end(data, 'utf-8'); // 브라우저로 전송
+      });
 });
+
+app.post('/',function(req,res){
+	res.writeHead(200,{'Content-Type':'text/html'}); // header 설정
+      fs.readFile(__dirname+ '/public/main.html', function(err, data){ // 파일 읽는 메소드
+        if (err) {
+          return console.error(err); // 에러 발생시 에러 기록하고 종료
+        }
+        res.end(data, 'utf-8'); // 브라우저로 전송
+      });
+});
+
 
 route_loader.init(app,express.Router());
 
