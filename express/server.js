@@ -3,7 +3,7 @@ const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
 const router = express.Router();
-var static = require('serve-static');
+//var static = require('serve-static');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var expressSession = require('express-session');
@@ -17,7 +17,7 @@ var route_loader = require('../routes/route_loader');
 
 console.log('config.server_port ->'+config.server_port);
 app.set('port', config.server_port || 3000);
-app.use('/public',static(path.join(__dirname,'/public')));
+//app.use('/public',static(path.join(__dirname,'/public')));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use(cookieParser());
