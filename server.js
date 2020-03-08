@@ -29,18 +29,15 @@ app.use(expressSession({
 }));
 
 router.get('/', (req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/html' });
-  fs.readFile(__dirname+ '/public/main.html', function(err, data){ // 파일 읽는 메소드
-        if (err) {
-          return console.error(err); // 에러 발생시 에러 기록하고 종료
-        }
-        res.end(data, 'utf-8'); // 브라우저로 전송
-      });
+
+	res.redirect('./public/main.html');
+	
 });
 
 
-route_loader.init(app,express.Router());
 
+//route_loader.init(app,express.Router());
+app.use('/',router);
 
 var errorHandler = expressErrorHandler({
 	static: {
