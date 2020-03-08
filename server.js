@@ -28,13 +28,13 @@ app.use(expressSession({
 	saveuninstalized: true
 }));
 
-router.get('/', (req, res) => {
+router.get('/', function(req, res) {
 console.log('aa');
 	res.redirect('./public/main.html');
 	
 });
 
-router.post('/', (req, res) => {
+router.post('/', function(req, res) {
 console.log('bb');
 	res.redirect('./public/main.html');
 	
