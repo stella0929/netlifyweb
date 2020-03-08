@@ -30,15 +30,23 @@ app.use(expressSession({
 
 router.get('/', function(req, res) {
 console.log('aa');
+	res.send("hello");
 	res.redirect('./public/main.html');
 	
 });
 
-router.post('/', function(req, res) {
-console.log('bb');
+router.get('/sdfg', function(req, res) {
+console.log('aa');
+	res.send("hello");
 	res.redirect('./public/main.html');
 	
 });
+router.get('/', function(req, res) {
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.write('<h1>Hello from Express.js!</h1>');
+  res.end();
+});
+
 
 
 //route_loader.init(app,express.Router());
